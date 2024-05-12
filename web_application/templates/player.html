@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/player.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+</head>
+<body>
+
+<div class="player">
+    <div class="wrapper">
+        
+        <div class="details">
+            <div class="track-art-container">
+                <div class="track-art"></div>
+            </div>
+            <div class="track-name">Track Name</div>
+            <div class="track-artist">Track Artist</div>
+        </div>
+
+        <div class="control-buttons-container">
+            <button class="playpause-track-btn"><i class="fas fa-play"></i></button>
+        </div>
+        
+        <div class="audio-slider-container">
+            <input type="range" class="audio_slider" min="0" max="100" value="0">
+        </div>
+
+        <div class="volume-slider-container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" class="volume_slider" min="0" max="100" value="100">
+            <i class="fa fa-volume-up"></i>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const songSrc = urlParams.get('src');
+
+        loadSong(songSrc);
+    });
+
+    let playpause_btn = document.querySelector('.playpause-track-btn');
+    let volume_slider = document.querySelector('.volume_slider');
+    let audio_slider = document.querySelector('.audio_slider');
+    let curr_track = new Audio();
+
+    let isPlaying = false;
+
+    function loadSong(src) {
+        if (!src) {
+            console.error("Song source not provided.");
+            return;
+        }
+
+        curr_track.src = src;
+        curr_track.load();
+    }
+
+    playpause_btn.addEventListener('click', () => {
+        if (isPlaying) {
+            pauseTrack();
+        } else {
+            playTrack();
+        }
+    });
+
+    function playTrack() {
+        curr_track.play();
+        isPlaying = true;
+        playpause_btn.innerHTML = '<i class="fas fa-pause"></i>';
+    }
+
+    function pauseTrack() {
+        curr_track.pause();
+        isPlaying = false;
+        playpause_btn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+
+    // Volume control
+    volume_slider.addEventListener('input', () => {
+        curr_track.volume = volume_slider.value / 100;
+    });
+
+    // Audio slider for moving forward and backward
+    audio_slider.addEventListener('input', () => {
+        curr_track.currentTime = (curr_track.duration * audio_slider.value) / 100;
+    });
+
+    // Update audio slider as music plays
+    curr_track.addEventListener('timeupdate', () => {
+        audio_slider.value = (curr_track.currentTime / curr_track.duration) * 100;
+    });
+</script>
+
+</body>
+</html>

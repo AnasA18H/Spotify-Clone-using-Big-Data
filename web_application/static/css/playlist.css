@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400;1,600&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box ;
+}
+
+body
+{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	
+}
+.website {
+    margin: 70px !important;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    /* Add other background styles as needed */
+}
+
+.navigation
+{
+justify-content: center;
+width:30%;
+margin: auto;
+display: flex;
+align-items: center;
+margin-bottom: 70px;
+backdrop-filter: blur(20px);
+margin-top: 20px;
+padding-top: 10px;
+height: 60px;
+border-radius: 50px;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+}
+.logo
+{
+    margin-left: 10px;
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	float: left;
+	background-color: black;
+	border-radius: 50% ;
+	cursor: pointer; 
+	transition: 0.6s;
+
+}
+
+.logo:hover
+{
+	box-shadow:rgb(255, 255, 255);
+	width: 50px;
+	height: 50px;
+    transform: translate(0px , -8px);
+}
+
+.navigation ul li
+{
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+position: relative;
+
+}
+.navigation ul li a
+{
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase ;
+    transition: 0.3s;
+}
+.navigation ul li a:hover
+{
+	color: white;
+}
+.navigation ul li::after
+{
+	content:'' ;
+	height: 3px;
+	width: 0;
+	background: rgb(61, 156, 69);
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.4s;
+}
+.navigation ul li:hover::after
+{
+	
+	width: 100%;
+}
+
+h1
+{
+ color: white;
+ transition: 0.3s;
+}
+h1:hover
+{
+color: rgb(61, 156, 69);
+padding-bottom: 10px;
+text-transform: full-width;
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+}
+
+.audio-container {
+    margin: 20px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fbf0f0;
+    border-radius: 20px;
+}
+
+.image-box {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    background-color: #fbf0f0;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.audio-player {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: #232323;
+    background: none;
+}
+
+.video-background {
+    position: fixed; /* Fix the position of the video */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it full width */
+    height: 100%; /* Make it full height */
+    z-index: -1; /* Place it behind other content */
+    object-fit: cover; /* Ensure the video covers the entire viewport */
+}
+
+.video-content {
+    position: relative;
+    z-index: 1;
+}
+/* Footer Styles */
+.footer {
+    margin-top: 275px;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer h4 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li a {
+    color: #bbb;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #fff;
+}

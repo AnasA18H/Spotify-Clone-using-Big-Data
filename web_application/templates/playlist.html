@@ -3,16 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist - Music Streaming App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>My Flask App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/playlist.css') }}">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <h1>My Playlist</h1>
-    <ul>
-        <li>Song 1</li>
-        <li>Song 2</li>
-        <li>Song 3</li>
-    </ul>
-    <a href="/">Go back to Home</a>
+    <a href="/index"><img src="static\images\spotify.png" class="logo"></a>
+    <div class="navigation">
+        <ul><b>
+            <li><a href="/index"><b>home</b></a></li>
+            <li><a href="/playlist"><b>PlayList</b></a></li>
+            <li><a href="/"><b>login</b></a></li>
+            <li><a href="/about"><b>About US</b></a></li>
+        </ul></b>
+    </div>
+    <video autoplay loop muted class="video-background">
+        <source src="/static/videos/wave.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="website">
+        <div class="product">
+            <div class="content">
+                <div class="row">
+                    {% for audio in audios %}
+                    <div class="col-md-1.1">
+                        <div class="audio-container">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='images/sound.png') }}" alt="Audio Image">
+                            </div>
+                            <!-- Add the 'play-btn' class to the audio element -->
+                            <audio controls class="audio-player play-btn" data-src="{{ url_for('serve_song', filename=audio) }}">
+                                <source src="{{ url_for('serve_song', filename=audio) }}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>About Us</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in mauris at sem mattis elementum.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1234567890</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audioPlayers = document.querySelectorAll('.audio-player');
+            audioPlayers.forEach(function (player) {
+                player.addEventListener('click', function () {
+                    const audioSrc = this.getAttribute('data-src');
+                    // Redirect to the player page with the audio source as a query parameter
+                    window.location.href = '/player?src=' + encodeURIComponent(audioSrc);
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

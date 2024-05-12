@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Music Streaming App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>About - Music Streaming App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>This is the about page of our Music Streaming App.</p>
-    <a href="/">Go back to Home</a>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/playlist">Playlist</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt lorem, sed condimentum nulla. Maecenas posuere sapien eu ligula efficitur, id fermentum turpis scelerisque.</p>
+        <h2>Our Team</h2>
+        <ul>
+            <li>John Doe - CEO</li>
+            <li>Jane Smith - CFO</li>
+            <li>David Johnson - CTO</li>
+        </ul>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,80 @@
+# # Import necessary libraries
+# from kafka import KafkaProducer, KafkaConsumer
+# from flask import Flask, render_template
+
+# # Initialize Flask application
+# app = Flask(__name__)
+
+# # Set up Kafka producer
+# producer = KafkaProducer(bootstrap_servers=["localhost:9092"])
+
+# # Set up Kafka consumer
+# consumer = KafkaConsumer("user_activity", bootstrap_servers=["localhost:9092"])
+
+# # Load the trained recommendation model
+# # Assume the model is already trained and available for inference
+
+
+# # Assuming you have a database or some storage mechanism for user history
+# def get_user_history(user_id):
+#     # Dummy implementation: Return a list of songs the user has listened to
+#     # Replace this with actual code to fetch user history from your database
+#     return ["Song A", "Song B", "Song C"]
+
+
+# # Assuming you have a database or some storage mechanism to update user history
+# def update_user_history(user_id, played_song):
+#     # Dummy implementation: Update the user's listening history in the database
+#     # Replace this with actual code to update user history in your database
+#     pass
+
+
+# # Assuming you have a recommendation algorithm based on user history
+# def recommend_based_on_history(user_id, user_history):
+#     # Dummy implementation: Recommend songs based on the user's listening history
+#     # Replace this with actual recommendation generation logic
+#     recommendations = ["Recommended Song 1", "Recommended Song 2", "Recommended Song 3"]
+#     return recommendations
+
+
+# # Function to generate recommendations based on user activity
+# def generate_recommendations(user_activity):
+#     # Extract relevant information from user activity
+#     user_id = user_activity["user_id"]
+#     played_song = user_activity["played_song"]
+#     # Assume user listening history is available, either from a database or another source
+#     user_history = get_user_history(user_id)
+
+#     # Based on the played song, you might want to update the user's listening history
+#     update_user_history(user_id, played_song)
+
+#     # Use the user's listening history and any other relevant information to generate recommendations
+#     # Replace this with actual recommendation generation logic
+#     recommendations = recommend_based_on_history(user_id, user_history)
+
+#     return recommendations
+
+
+# # Route for the home page
+# @app.route("/")
+# def index():
+#     return render_template("index.html")
+
+# # Function to continuously consume user activity from Kafka and generate recommendations
+# def consume_and_generate_recommendations():
+#     for message in consumer:
+#         user_activity = message.value.decode("utf-8")
+#         recommendations = generate_recommendations(user_activity)
+#         # Send recommendations to Kafka topic for the user
+#         producer.send("user_recommendations", recommendations)
+
+# # Start Kafka consumer in a separate thread
+# import threading
+
+# consumer_thread = threading.Thread(target=consume_and_generate_recommendations)
+# consumer_thread.daemon = True
+# consumer_thread.start()
+
+# # Run the Flask application
+# if __name__ == "__main__":
+#     app.run(debug=True)

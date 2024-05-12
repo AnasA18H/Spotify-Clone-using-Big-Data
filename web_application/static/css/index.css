@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400;1,600&display=swap');
+
+body
+{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box ;
+}
+.website
+{
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url("/static/images/back_main.jpg");
+    background-size: cover; 
+    background-position: center;
+
+}
+
+.navigation
+{
+width: 85%;
+margin: auto;
+padding: 30px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.logo-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo2 {
+	width: 60px;
+	height: 60px;
+	margin-top: 88px;
+    margin-right: 10px; /* Adjust this value to your preference */
+}
+
+.logo
+{
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	float: left;
+	background-color: black;
+	border-radius: 50% ;
+	cursor: pointer; 
+	transition: 0.6s;
+
+}
+
+.logo:hover
+{
+	box-shadow:white;
+	width: 50px;
+	height: 50px;
+    transform: translate(0px , -8px);
+}
+
+.navigation ul li
+{
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+position: relative;
+
+}
+.navigation ul li a
+{
+	text-decoration: none;
+	color: gray;
+	text-transform: uppercase ;
+    transition: 0.3s;
+}
+.navigation ul li a:hover
+{
+	color: white;
+}
+.navigation ul li::after
+{
+	content:'' ;
+	height: 3px;
+	width: 0;
+	background: rgb(61, 156, 69);
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.4s;
+}
+.navigation ul li:hover::after
+{
+	
+	width: 100%;
+}
+
+h1
+{
+ color: white;
+ transition: 0.3s;
+}
+h1:hover
+{
+color: rgb(61, 156, 69);
+padding-bottom: 10px;
+text-transform: full-width;
+}
+
+.shop
+{
+	width: 100% ;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);	
+	text-align: center;
+	color: white;
+}
+
+.shop h1
+{
+	font-size: 70px;
+	margin-top: 80px;
+
+}
+.shop p
+{
+	margin: 20px auto ;
+	font-weight: 100;
+	font-size: 15px;
+	line-height: 25px ;
+}
+button
+{
+margin-top: 20px;
+width: 200px;
+padding: 15px 0;
+text-align: center;
+margin: 20px 10px;
+border-radius: 25px;
+font-weight: bold;
+border: 2px solid rgb(61, 156, 69);
+background: transparent;
+color: rgb(255, 255, 255);
+cursor: pointer;
+position: relative;
+overflow: hidden;
+
+}
+span
+{
+	background: rgb(61, 156, 69);
+	height: 100%;
+	width: 0;
+	border-radius: 25px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+button:hover span
+{
+width: 100%;
+}
+button:hover
+{
+	border: none;
+}
+
+.container
+{
+max-width: 1200px;
+margin: auto;
+}
+
+.row
+{
+ display: flex;
+ flex-wrap: wrap;
+}
+
+ul
+{
+list-style: none;
+}
+.footer {
+    padding: 70px 0;
+    position: relative; /* Position relative for positioning the pseudo-element */
+}
+
+.footer::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position the pseudo-element */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/images/back_main.jpg"); /* Background image */
+    background-size: cover; /* Cover the entire pseudo-element */
+    background-position: center; /* Center the background image */
+    filter: blur(5px); /* Apply blur effect */
+    -webkit-filter: blur(5px); /* For Safari */
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+  
+  .footer-col {
+	width: 25%;
+	padding: 0 15px;
+  }
+  
+  .footer-col h4 {
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+  }
+  
+  .footer-col h4::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	background-color: #27a20e;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+  }
+  
+  .footer-col ul li:not(:last-child) {
+	margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #280606;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+	color: #38e48b;
+	padding-left: 8px;
+  }
+  
+  .footer-col .social-links a {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+  }
+  
+  .footer-col .social-links a:hover {
+	color: #24262b;
+	background-color: #ffffff;
+  }
+  
+  
+  @media (max-width: 767px) {
+	.footer-col {
+	  width: 50%;
+	  margin-bottom: 30px;
+	}
+  }
+  
+  
+  @media (max-width: 574px) {
+	.footer-col {
+	  width: 100%;
+	}
+  }

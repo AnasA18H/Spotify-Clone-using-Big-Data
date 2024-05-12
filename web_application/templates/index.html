@@ -1,21 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Streaming App - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to the Music Streaming App</h1>
-    <nav>
+
+<div class="website">
+    <div class="navigation">
+        
+        <a href="/index"><img src="static\images\spotify.png" class="logo"></a>
+
+        <ul><b>
+            <li><a href="/index"><b>home</b></a></li>
+            <li><a href="/playlist"><b>PlayList</b></a></li>
+            <li><a href="/"><b>login</b></a></li>
+            <li><a href="/about"><b>About US</b></a></li>
+        </ul></b>
+
+    </div>
+    <div class="shop"> 
+        <div class="logo-container">
+            <a href="/index"><img src="static\images\spotify.png" class="logo2"></a>
+            <h1><b>Spotify</b></h1>
+        </div>
+        
+
+        
+        
+        <div>
+        
+        <a href="/"><button type="button"><span></span><b><h3><b>l o g i n</b></h3></b></button></a>
+        <a href="/register"><button type="button"><span></span><h3><b>S i g n u p</b></h3></button></button></a>    
+            
+
+        </div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/playlist">Playlist</a></li>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
         </ul>
-    </nav>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

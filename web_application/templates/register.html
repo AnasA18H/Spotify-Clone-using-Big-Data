@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr Watch</title>
+    <!-- Add your CSS links here -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+
+<div class="register">
+    <a href="#"><img src="/static/images/spotify.png" class="logo"></a>
+    <div class="form">
+        <div class="buttons">
+            <div id="bt"></div>
+            <a href="/login"><button type="button" class="butt">Login</button></a>
+        </div>
+        <div class="col">
+            <div class="socail">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <form id="registers" class="input-text" method="post" action="/register">
+            <input type="text" class="text-field" placeholder="enter username" name="username" required style="color: white;">
+            <input type="email" class="text-field" placeholder="enter your email" name="email" required style="color: white;">
+            <input type="password" class="text-field" placeholder="enter password" name="password" required style="color: white;">
+            <input type="checkbox" class="check" required><span>Agree to term of service and policies</span>
+            <button type="submit" class="submita">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

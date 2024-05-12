@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr Watch</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script>
+        function toggleBlur(enableBlur) {
+            document.body.classList.toggle('blur-background', enableBlur);
+        }
+    </script>
+</head>
+<body>
+
+<div class="login" onmouseover="toggleBlur(true)" onmouseout="toggleBlur(false)">
+    <div class="nav">
+        <a href="#"><img src="/static/images/spotify.png" class="logo"></a>
+    </div>
+    
+    <div class="form">
+        <div class="buttons">
+            <div id="bt"></div>
+            <a href="{{ url_for('register') }}"><button type="button" class="butt">Sign Up</button></a>
+        </div>
+        <div class="col">
+            <div class="socail">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <form id="loginn" class="input-text" method="post" action="/login">
+			<input type="text" class="text-field" placeholder="Enter username" name="username" required>
+			<input type="password" class="text-field" placeholder="Enter password" name="password" required>
+			<input type="checkbox" class="check" ><span>Remember Me!</span>
+			<button type="submit" class="submita">Login</button>
+		</form>
+    </div>
+</div>
+
+</body>
+</html>

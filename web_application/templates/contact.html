@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="contact">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Music Streaming App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <p>Contact us through the form below:</p>
-    <form action="/submit_contact" method="post">
-        <input type="text" name="name" placeholder="Your Name"><br>
-        <input type="email" name="email" placeholder="Your Email"><br>
-        <textarea name="message" placeholder="Your Message"></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
-    <a href="/">Go back to Home</a>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/playlist">Playlist</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Contact us through the form below:</p>
+            <form action="/submit_contact" method="post">
+                <input type="text" name="name" placeholder="Your Name"><br>
+                <input type="email" name="email" placeholder="Your Email"><br>
+                <textarea name="message" placeholder="Your Message"></textarea><br>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
